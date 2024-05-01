@@ -1,0 +1,1077 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Contacts Page Test",
+    "line": 1,
+    "id": "contacts-page-test",
+    "tags": [],
+    "uri": "contacts.feature",
+    "elements": [
+      {
+        "id": "contacts-page-test;verify-the-title-and-header-of-the-page",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify the title and header of the page",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 4453000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Header"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Contact us"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "Validate the title of the page",
+            "result": {
+              "status": "passed",
+              "duration": 54000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;verify-that-all-the-fields-are-displayed",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Verify that all the fields are displayed",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2963000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Fields"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "FirstName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LastName"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Email"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MobileNo"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Howhear"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Message"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "SendMessageBtn"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "Validate all fields are displayed",
+            "result": {
+              "status": "passed",
+              "duration": 272000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;verify-the-default-value-and-possible-values-of-\"how-did-you-hear-about-us?\"-dropdown",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Verify the default value and possible values of \"How did you hear about us?\" dropdown",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2810000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "DefaultValue"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "How did you hear about us?"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Validate default value of dropdown",
+            "result": {
+              "status": "passed",
+              "duration": 32000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Value"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Referral"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Word of mouth"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Event"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Article"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Facebook"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Twitter"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Instagram"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "LinkedIn"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Job board"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Other"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Clubhouse"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 26,
+            "name": "Validate all possible values can be selected",
+            "result": {
+              "status": "passed",
+              "duration": 2575000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2344000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \" \" in \"Name\" field",
+            "result": {
+              "status": "passed",
+              "duration": 567000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Name\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 1006000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 49,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2251000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"\" in \"Name\" field",
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Name\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 85000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 50,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2113000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \" \" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 217000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 986000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 51,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2339000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 177000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 63000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2203000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"testingqa@test.com\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 604000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Please enter a valid email address.\"",
+            "result": {
+              "status": "passed",
+              "duration": 815000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2162000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"******@gmail.com\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 650000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Please enter a valid email address.\"",
+            "result": {
+              "status": "passed",
+              "duration": 988000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 3678000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"testingqa\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 430000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Email must be formatted correctly.\"",
+            "result": {
+              "status": "passed",
+              "duration": 1021000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 55,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2738000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"testingqa@gmail\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 761000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Email must be formatted correctly.\"",
+            "result": {
+              "status": "passed",
+              "duration": 995000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2104000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"testingqa#gmail.com\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 665000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Email must be formatted correctly.\"",
+            "result": {
+              "status": "passed",
+              "duration": 982000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 57,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2957000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"testingqa@***.com\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 677000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Email must be formatted correctly.\"",
+            "result": {
+              "status": "passed",
+              "duration": 983000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 58,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2263000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"@@@@@@@@@...\" in \"Email\" field",
+            "result": {
+              "status": "passed",
+              "duration": 473000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Email\" throws expected error \"Email must be formatted correctly.\"",
+            "result": {
+              "status": "passed",
+              "duration": 1007000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 59,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 3224000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \" \" in \"MobileNo\" field",
+            "result": {
+              "status": "passed",
+              "duration": 235000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"MobileNo\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 997000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2198000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"\" in \"MobileNo\" field",
+            "result": {
+              "status": "passed",
+              "duration": 202000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"MobileNo\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 68000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"32424\" in \"MobileNo\" field",
+            "result": {
+              "status": "passed",
+              "duration": 410000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"MobileNo\" throws expected error \"The number you entered is not in range.\"",
+            "result": {
+              "status": "passed",
+              "duration": 985000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 62,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2569000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"12434**\" in \"MobileNo\" field",
+            "result": {
+              "status": "passed",
+              "duration": 384000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"MobileNo\" throws expected error \"A valid phone number may only contain numbers, +()-. or x\"",
+            "result": {
+              "status": "passed",
+              "duration": 984000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 63,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2230000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"+(12)3324848939298494992\" in \"MobileNo\" field",
+            "result": {
+              "status": "passed",
+              "duration": 652000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"MobileNo\" throws expected error \"The number you entered is not in range.\"",
+            "result": {
+              "status": "passed",
+              "duration": 986000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 64,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2015000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"+(x-12)-4324-235-2525-435\" in \"MobileNo\" field",
+            "result": {
+              "status": "passed",
+              "duration": 700000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"MobileNo\" throws expected error \"A valid phone number may only contain numbers, +()-. or x\"",
+            "result": {
+              "status": "passed",
+              "duration": 965000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 65,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2201000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \" \" in \"Message\" field",
+            "result": {
+              "status": "passed",
+              "duration": 222000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Message\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 983000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-mandatory-input-fields-of-contacts-page-by-passing-invalid-values",
+        "keyword": "Scenario",
+        "line": 66,
+        "name": "Validate mandatory input fields of contacts page by passing invalid values",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "User enters following invalid \"\" in \"Message\" field",
+            "result": {
+              "status": "passed",
+              "duration": 134000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Validate the field \"Message\" throws expected error \"Please complete this required field.\"",
+            "result": {
+              "status": "passed",
+              "duration": 99000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "contacts-page-test;validate-contacts-page-by-passing-valid-values-and-confirm-no-validation-error-occurs",
+        "keyword": "Scenario",
+        "line": 70,
+        "name": "Validate contacts page by passing valid values and confirm no validation error occurs",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 71,
+            "name": "User is on Contacts Page",
+            "result": {
+              "status": "passed",
+              "duration": 2103000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "FirstName",
+                      "LastName",
+                      "Email",
+                      "MobileNo",
+                      "Howhear",
+                      "Message"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Test",
+                      "Test",
+                      "testingqa@qatest.com",
+                      "+(91)-3294823932",
+                      "Other",
+                      "Test Contacts Page"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "When ",
+            "line": 72,
+            "name": "User enters following valid values in all fields",
+            "result": {
+              "status": "passed",
+              "duration": 2535000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 75,
+            "name": "Validate no errors present for all the fields and submit button is enabled",
+            "result": {
+              "status": "passed",
+              "duration": 186000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "name": "contactspageautomation",
+  "version": "1.0.0",
+  "description": "Testing contacts page",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./cypress/cucumberReport.js"
+  },
+  "author": "Madhumitha P",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.8.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "multiple-cucumber-html-reporter": "^3.6.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "step_definitions": "cypress/e2e/contacts",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}
