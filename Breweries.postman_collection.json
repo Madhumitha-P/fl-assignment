@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "2b6b8936-6ed8-4af6-8e86-92710ffb7b2c",
+		"name": "Breweries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31973338"
+	},
+	"item": [
+		{
+			"name": "AllBreweries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/**\r",
+							" * Extracting Ids from response and storing as variable for passing in \r",
+							" * SingleBrewery and MultipleBrewery steps\r",
+							"**/\r",
+							"if(pm.response.code == 200 && pm.response.json().length != 0){\r",
+							"   let fullBreweryIds = [];\r",
+							"   const responseBrewery = pm.response.json();\r",
+							"   responseBrewery.forEach((brewery)=>{\r",
+							"        fullBreweryIds.push(brewery.id)\r",
+							"   })\r",
+							"   pm.collectionVariables.set(\"FullBreweryList\", fullBreweryIds);\r",
+							"   console.log(fullBreweryIds)\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Validate endpoint status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const schema = {\r",
+							"  \"type\": \"array\",\r",
+							"  \"items\": [\r",
+							"    {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"brewery_type\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"address_1\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"address_2\": {\r",
+							"          \"type\": \"null\"\r",
+							"        },\r",
+							"        \"address_3\": {\r",
+							"          \"type\": \"null\"\r",
+							"        },\r",
+							"        \"city\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state_province\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"postal_code\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"longitude\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"latitude\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"phone\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"website_url\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"brewery_type\",\r",
+							"        \"address_1\",\r",
+							"        \"address_2\",\r",
+							"        \"address_3\",\r",
+							"        \"city\",\r",
+							"        \"state_province\",\r",
+							"        \"postal_code\",\r",
+							"        \"country\",\r",
+							"        \"longitude\",\r",
+							"        \"latitude\",\r",
+							"        \"phone\",\r",
+							"        \"website_url\",\r",
+							"        \"state\",\r",
+							"        \"street\"\r",
+							"      ]\r",
+							"    }\r",
+							"  ]\r",
+							"}\r",
+							"\r",
+							"pm.test('Schema is valid', function () {\r",
+							"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OpenBrewery}}/v1/breweries",
+					"host": [
+						"{{OpenBrewery}}"
+					],
+					"path": [
+						"v1",
+						"breweries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingleBrewery",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate endpoint status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validating endpoint retrieves only the searched breweryId\",function(){\r",
+							"    let passedBrewery = pm.collectionVariables.get(\"SingleBreweryId\");\r",
+							"    if(Object.keys(pm.response.json()).length!=0){\r",
+							"        pm.expect(passedBrewery).to.eq(pm.response.json().id)\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"const schema = {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"id\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"name\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"brewery_type\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"address_1\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"address_2\": {\r",
+							"          \"type\": \"null\"\r",
+							"        },\r",
+							"        \"address_3\": {\r",
+							"          \"type\": \"null\"\r",
+							"        },\r",
+							"        \"city\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state_province\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"postal_code\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"longitude\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"latitude\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"phone\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"website_url\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"id\",\r",
+							"        \"name\",\r",
+							"        \"brewery_type\",\r",
+							"        \"address_1\",\r",
+							"        \"address_2\",\r",
+							"        \"address_3\",\r",
+							"        \"city\",\r",
+							"        \"state_province\",\r",
+							"        \"postal_code\",\r",
+							"        \"country\",\r",
+							"        \"longitude\",\r",
+							"        \"latitude\",\r",
+							"        \"phone\",\r",
+							"        \"website_url\",\r",
+							"        \"state\",\r",
+							"        \"street\"\r",
+							"      ]\r",
+							"}\r",
+							"\r",
+							"pm.test('Schema is valid', function () {\r",
+							"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let FullBrewery = pm.collectionVariables.get(\"FullBreweryList\");\r",
+							"pm.collectionVariables.set(\"SingleBreweryId\", FullBrewery[0]);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OpenBrewery}}/v1/breweries/{{SingleBreweryId}}",
+					"host": [
+						"{{OpenBrewery}}"
+					],
+					"path": [
+						"v1",
+						"breweries",
+						"{{SingleBreweryId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MultipleBreweries",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let FullBrewery = pm.collectionVariables.get(\"FullBreweryList\");\r",
+							"pm.collectionVariables.set(\"MultipleBreweryId\", FullBrewery[0]+\",\"+FullBrewery[1]);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validating endpoint retrieves only the searched breweryId\",function(){\r",
+							"    const passedBrewery = pm.collectionVariables.get(\"MultipleBreweryId\").split(\",\")\r",
+							"    if(pm.response.json().length!=0){\r",
+							"        pm.response.json().forEach((brewery)=>{\r",
+							"        pm.expect(passedBrewery.includes(brewery.id)).to.eql(true);\r",
+							"        })\r",
+							"    }\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OpenBrewery}}/v1/breweries?by_ids={{MultipleBreweryId}}",
+					"host": [
+						"{{OpenBrewery}}"
+					],
+					"path": [
+						"v1",
+						"breweries"
+					],
+					"query": [
+						{
+							"key": "by_ids",
+							"value": "{{MultipleBreweryId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BreweryType",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"breweryType\",\"nano\");\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check response contains only given brewery type\", function(){\r",
+							"    const breweryType = pm.collectionVariables.get(\"breweryType\");\r",
+							"    const breweryTypeRes = pm.response.json();\r",
+							"    if(pm.response.json().length != 0){\r",
+							"        breweryTypeRes.forEach((brewery)=>{\r",
+							"            pm.expect(brewery.brewery_type).to.eql(breweryType);\r",
+							"        })\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OpenBrewery}}/v1/breweries?by_type={{breweryType}}",
+					"host": [
+						"{{OpenBrewery}}"
+					],
+					"path": [
+						"v1",
+						"breweries"
+					],
+					"query": [
+						{
+							"key": "by_type",
+							"value": "{{breweryType}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BreweriesSort",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate endpoint status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validate the response sorted based on ascending order of city\", function(){\r",
+							"    if(pm.response.json().length!=0){\r",
+							"        let city = pm.response.json()[0].city;\r",
+							"        const sortBreweryList = pm.response.json();\r",
+							"        sortBreweryList.forEach((brewery)=>{\r",
+							"            let checkSort = city.localeCompare(brewery.city)\r",
+							"            pm.expect(checkSort).to.be.oneOf([-1,0]);\r",
+							"            city=brewery.city;\r",
+							"        })\r",
+							"    }\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{OpenBrewery}}/v1/breweries?sort=city:asc",
+					"host": [
+						"{{OpenBrewery}}"
+					],
+					"path": [
+						"v1",
+						"breweries"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "city:asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.environment.set(\"OpenBrewery\", \"https://api.openbrewerydb.org\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "FullBreweryList",
+			"value": ""
+		},
+		{
+			"key": "MultipleBreweryId",
+			"value": ""
+		},
+		{
+			"key": "breweryType",
+			"value": ""
+		},
+		{
+			"key": "SingleBreweryId",
+			"value": ""
+		}
+	]
+}
